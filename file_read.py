@@ -21,9 +21,12 @@ def makeData(mode):
         if is_first_line:
             is_first_line = False
             continue
-        splitted_line = line.split(',')
-        features.append(splitted_line[0:-1])
-        changed_splitted_label = sub('\n', '', splitted_line[-1])
-        labels.append(int(changed_splitted_label))
+        splitted_line = line.split(',')[2:]
+        splitted_line[-1] = sub("\n", "", splitted_line[-1])
+        new_list = list()
+        for attribute in splitted_line:
+            new_list.append(float(attribute))
+        features.append(new_list[0:-1])
+        labels.append(new_list[-1])
 
     return features, labels
