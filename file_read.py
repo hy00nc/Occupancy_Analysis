@@ -9,7 +9,7 @@ def makeData(mode):
     if mode == "training":
         f = file_open("datatraining.txt")
     elif mode == "test":
-        f = file_open("datatest.txt")
+        f = file_open("datatest2.txt")
 
     lines = f.readlines()
 
@@ -35,7 +35,7 @@ def makeDataWithoutHumidity(mode):
     if mode == "training":
         f = file_open("datatraining.txt")
     elif mode == "test":
-        f = file_open("datatest.txt")
+        f = file_open("datatest2.txt")
 
     lines = f.readlines()
 
